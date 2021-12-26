@@ -3,7 +3,7 @@ package buckpal.domain
 import java.math.BigInteger
 
 data class Money(
-    val amount: BigInteger
+    private val amount: BigInteger
 ) {
     companion object {
         val ZERO: Money = valueOf(0)
@@ -27,5 +27,9 @@ data class Money(
 
     fun isPositive(): Boolean {
         return amount >= BigInteger.ZERO
+    }
+
+    fun isGreaterThen(value: Money): Boolean {
+        return this.amount > value.amount
     }
 }
