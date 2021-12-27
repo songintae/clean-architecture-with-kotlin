@@ -14,7 +14,7 @@ data class Money(
     }
 
     operator fun plus(value: Money): Money {
-        return Money(this.amount.add(value.amount))
+        return Money(this.amount + value.amount)
     }
 
     operator fun minus(value: Money): Money {
@@ -22,7 +22,7 @@ data class Money(
     }
 
     private operator fun unaryMinus(): Money {
-        return Money(this.amount.negate())
+        return Money(-this.amount)
     }
 
     fun isPositive(): Boolean {
