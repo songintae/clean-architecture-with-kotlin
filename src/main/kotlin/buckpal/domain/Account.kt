@@ -40,7 +40,7 @@ class Account(
     }
 
     private fun mayWithdraw(money: Money): Boolean {
-        return this.calculateBalance().minus(money).isPositive()
+        return (this.calculateBalance() - money).isPositive()
     }
 
     fun deposit(money: Money, sourceAccountId: AccountId): Boolean {

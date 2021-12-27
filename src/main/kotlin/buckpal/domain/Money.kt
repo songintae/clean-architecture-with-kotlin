@@ -13,15 +13,15 @@ data class Money(
         }
     }
 
-    fun plus(value: Money): Money {
+    operator fun plus(value: Money): Money {
         return Money(this.amount.add(value.amount))
     }
 
-    fun minus(value: Money): Money {
-        return this.plus(value.negate())
+    operator fun minus(value: Money): Money {
+        return this + (-value)
     }
 
-    fun negate(): Money {
+    private operator fun unaryMinus(): Money {
         return Money(this.amount.negate())
     }
 
