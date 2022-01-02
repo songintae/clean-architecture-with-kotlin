@@ -43,6 +43,7 @@ class SendMoneyService(
         if (!targetAccount.deposit(command.money, sourceAccount.getId())) {
             accountLock.releaseAccount(sourceAccount.getId())
             accountLock.releaseAccount(targetAccount.getId())
+            return false
         }
 
         updateAccountStatePort.updateActivities(sourceAccount)
