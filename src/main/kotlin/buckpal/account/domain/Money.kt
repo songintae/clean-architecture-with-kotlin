@@ -1,10 +1,10 @@
-package buckpal.domain
+package buckpal.account.domain
 
 import java.math.BigInteger
 
 data class Money(
     private val amount: BigInteger
-) {
+) : Comparable<Money> {
     companion object {
         val ZERO: Money = valueOf(0)
 
@@ -31,5 +31,9 @@ data class Money(
 
     fun isGreaterThen(value: Money): Boolean {
         return this.amount > value.amount
+    }
+
+    override fun compareTo(other: Money): Int {
+        return compareValuesBy(this, other, Money::amount);
     }
 }

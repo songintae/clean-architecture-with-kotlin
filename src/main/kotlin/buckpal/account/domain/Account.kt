@@ -1,4 +1,4 @@
-package buckpal.domain
+package buckpal.account.domain
 
 import java.time.LocalDateTime
 
@@ -53,6 +53,10 @@ class Account(
         )
         activityWindow.addActivity(deposit)
         return true
+    }
+
+    fun getId(): AccountId {
+        return id
     }
 }
 

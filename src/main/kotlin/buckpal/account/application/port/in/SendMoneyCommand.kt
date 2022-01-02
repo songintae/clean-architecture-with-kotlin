@@ -1,7 +1,7 @@
-package buckpal.application.port.`in`
+package buckpal.account.application.port.`in`
 
-import buckpal.domain.AccountId
-import buckpal.domain.Money
+import buckpal.account.domain.AccountId
+import buckpal.account.domain.Money
 
 class SendMoneyCommand(
     sourceAccountId: AccountId,
